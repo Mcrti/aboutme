@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@noah.bcd</title>
+    <link rel="stylesheet" href="mapage.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- Particles.js -->
+</head>
+<body>
+
+    <!-- Vidéo en fond -->
+    <video autoplay muted loop id="background-video">
+        <source src="fond.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div id="particles-js"></div> <!-- Particules d'arrière-plan -->
+
+    <div class="container">
+        <header>
+            <h1>Noah.bcd</h1>
+            <p>16 years old video editor</p>
+        </header>
+
+        <hr class="separator">
+        
+        <div class="work">
+            <h2>Check my work</h2>
+            <a href="#" class="work-link">click here</a>
+        </div>
+
+        <hr class="separator">
+
+        <!-- Intégration Spotify -->
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4kbnCo4muQyeA6xiv6c4ue?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+        <hr class="separator">
+
+        <!-- Réseaux sociaux -->
+        <section class="links">
+            <h2>Follow me</h2>
+            <ul class="social-links">
+                <li><a href="https://twitter.com/votretwitter" class="twitter" target="_blank">X</a></li>
+                <li><a href="https://www.instagram.com/votreinstagram" class="instagram" target="_blank">Instagram</a></li>
+                <li><a href="https://www.tiktok.com/@votretiktok" class="tiktok" target="_blank">TikTok</a></li>
+                <li><a href="https://www.youtube.com/c/votreyoutube" class="youtube" target="_blank">YouTube</a></li>
+                <li><a href="https://www.deezer.com" class="deezer" target="_blank">Deezer</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- Particles.js -->
+<script>
+// Configuration de Particles.js
+particlesJS("particles-js", {
+    particles: {
+        number: {
+            value: 80,
+            density: {
+                enable: true,
+                value_area: 800
+            }
+        },
+        color: {
+            value: "#ffffff"
+        },
+        shape: {
+            type: "circle",
+            stroke: {
+                width: 0,
+                color: "#000000"
+            },
+            polygon: {
+                nb_sides: 5
+            },
+            image: {
+                src: "img/github.svg",
+                width: 100,
+                height: 100
+            }
+        },
+        opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+            }
+        },
+        size: {
+            value: 5,
+            random: true,
+            anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+            }
+        },
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200
+            }
+        }
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: {
+                enable: true,
+                mode: "repulse"
+            },
+            onclick: {
+                enable: true,
+                mode: "push"
+            },
+            resize: true
+        },
+        modes: {
+            grab: {
+                distance: 400,
+                line_linked: {
+                    opacity: 1
+                }
+            },
+            bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3
+            },
+            repulse: {
+                distance: 200,
+                duration: 0.4
+            },
+            push: {
+                particles_nb: 4
+            },
+            remove: {
+                particles_nb: 2
+            }
+        }
+    },
+    retina_detect: true
+});
+
+// Fonction pour relier les particules les plus proches au pointeur de souris
+const particles = [];
+document.addEventListener("mousemove", (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    // Mettre à jour les particules proches du pointeur
+    const closeParticles = particles.filter(p => {
+        const dx = p.x - mouseX;
+        const dy = p.y - mouseY;
+        return Math.sqrt(dx * dx + dy * dy) < 100; // Rayon de 100 pixels
+    });
+
+    // Dessiner les lignes entre les particules proches
+    closeParticles.forEach(p => {
+        const line = document.createElement("div");
+        line.style.position = "absolute";
+        line.style.width = "1px";
+        line.style.height = "1px";
+        line.style.backgroundColor = "rgba(255, 255, 255, 0.5)";
+        line.style.transformOrigin = "0 0";
+        const angle = Math.atan2(p.y - mouseY, p.x - mouseX);
+        const length = Math.sqrt((p.x - mouseX) ** 2 + (p.y - mouseY) ** 2);
+        line.style.transform = `translate(${mouseX}px, ${mouseY}px) rotate(${angle}rad)`;
+        line.style.width = `${length}px`;
+        document.body.appendChild(line);
+    });
+});
+
+// Ajouter des particules à la liste
+document.querySelectorAll(".particles").forEach(p => {
+    particles.push({
+        x: p.offsetLeft + p.offsetWidth / 2,
+        y: p.offsetTop + p.offsetHeight / 2
+    });
+});
+</script>
+
+</body>
+</html>

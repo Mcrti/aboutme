@@ -1,0 +1,154 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Vidéo en arrière-plan */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -2; /* Vidéo derrière le contenu */
+    object-fit: cover; /* Adapte la vidéo à l'écran */
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Conteneur principal centré */
+.container {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(31, 31, 31, 0.8); /* Fond transparent */
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
+    z-index: 1; /* Pour être devant les particules */
+}
+
+/* Titre principal (Noah.bcd) */
+header h1 {
+    font-size: 3em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Séparateur */
+.separator {
+    margin: 30px auto;
+    width: 80%;
+    border: none;
+    border-top: 2px solid #ffffff;
+    opacity: 0.2;
+}
+
+/* Section "Check my work" */
+.work {
+    margin: 30px 0;
+}
+
+.work h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.work-link {
+    font-size: 1.2em;
+    color: #ff0000; /* Lien en rouge */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.work-link:hover {
+    color: #ffffff;
+}
+
+/* Réseaux sociaux */
+.links {
+    margin-top: 40px;
+}
+
+.links h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.links ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Alignement horizontal */
+    justify-content: center;
+}
+
+.links ul li {
+    margin: 0 15px; /* Espacement entre les liens */
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+    display: inline-block;
+}
+
+/* Effet de zoom et changement de couleur au survol */
+.links ul li a:hover {
+    transform: scale(1.2); /* Effet de zoom */
+}
+
+a.instagram:hover {
+    color: #e1306c;
+    text-shadow: 0 0 15px rgba(225, 48, 108, 0.8);
+}
+
+a.x:hover {
+    color: #00ffec;
+    text-shadow: 0 0 15px rgba(29, 161, 242, 0.8);
+}
+
+a.youtube:hover {
+    color: #ff0000;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+a.tiktok:hover {
+    color: #69c9d0;
+    text-shadow: 0 0 15px rgba(105, 201, 208, 0.8);
+}
+
+a.deezer:hover {
+    color: #92278f;
+    text-shadow: 0 0 15px rgba(146, 39, 143, 0.8);
+}
